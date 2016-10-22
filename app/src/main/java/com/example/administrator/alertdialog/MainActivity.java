@@ -219,13 +219,14 @@ public class MainActivity extends Activity {
     public  void  dialog7(){
         LayoutInflater li = getLayoutInflater();
         View layout=li.inflate(R.layout.diydialog,null);
-        final EditText tEdit = (EditText)layout.findViewById(R.id.editText);
+        final EditText tEdit = (EditText)layout.findViewById(R.id.editText1);
+        final EditText tEdit2 = (EditText)layout.findViewById(R.id.editText2);
         dialog =new AlertDialog.Builder(this).create();
         dialog.setTitle("自定义布局");
         dialog.setView(layout);
         DialogInterface.OnClickListener listenter = new DialogInterface.OnClickListener(){
             public void  onClick(DialogInterface dialog, int which){
-                tView.setText("输入的是："+tEdit.getText().toString());
+                 tView.setText(tEdit1.getText().toString()+"\n"+tEdit2.getText().toString());
             }
         };
         dialog.setButton(DialogInterface.BUTTON_POSITIVE, "确定", listenter);
